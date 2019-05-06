@@ -1,0 +1,108 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* =====================
+header
+========================*/
+
+#title {
+  margin: 10px auto;
+  width: 300px;
+  text-align: center;
+}
+
+/* =====================
+board
+========================*/
+
+#board {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  height: 300px;
+  width: 300px;
+  margin: 15px auto;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+
+/* =====================
+individual tiles
+========================*/
+
+.tile {
+  text-align: center;
+  padding: 40% 0;
+}
+
+.tile-0-0,
+.tile-0-2,
+.tile-1-1,
+.tile-2-0,
+.tile-2-2 {
+  background: rgb(187, 187, 187);
+  color: rgb(49, 49, 49);
+}
+
+.tile-0-1,
+.tile-1-0,
+.tile-1-2,
+.tile-2-1 {
+  background: white;
+  color: rgb(49, 49, 49);
+}
+
+
+/* =====================
+play game
+========================*/
+
+#play {
+  margin: 10px auto;
+  width: 300px;
+  text-align: center;
+}
+
+#play-game-btn {
+  height: 30px;
+  border: 1px solid rgb(49, 49, 49);;
+  color: rgb(49, 49, 49);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#play-game-btn:hover {
+  background: rgb(49, 49, 49);
+  color: white;
+}
+
+
+/* =====================
+turn
+========================*/
+
+#turn {
+  margin: 10px auto;
+  height: 30px;
+  width: 300px;
+  text-align: center;
+  color: rgb(49, 49, 49);
+  font-size: 12px;
+}
+
+
+/* =====================
+fonts
+========================*/
+
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
