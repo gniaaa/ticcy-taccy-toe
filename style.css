@@ -11,6 +11,7 @@ header
   margin: 10px auto;
   width: 300px;
   text-align: center;
+  color: #393e46;
 }
 
 /* =====================
@@ -24,8 +25,8 @@ board
   height: 300px;
   width: 300px;
   margin: 15px auto;
-  border: 1px solid black;
-  border-radius: 3px;
+  border: 1px solid #393e46;
+  border-radius: 5px;
 }
 
 
@@ -43,8 +44,8 @@ individual tiles
 .tile-1-1,
 .tile-2-0,
 .tile-2-2 {
-  background: rgb(187, 187, 187);
-  color: rgb(49, 49, 49);
+  background: #ffe2e2;
+  color: #393e46;
 }
 
 .tile-0-1,
@@ -52,7 +53,7 @@ individual tiles
 .tile-1-2,
 .tile-2-1 {
   background: white;
-  color: rgb(49, 49, 49);
+  color: #393e46;
 }
 
 
@@ -68,29 +69,57 @@ play game
 
 #play-game-btn {
   height: 30px;
-  border: 1px solid rgb(49, 49, 49);;
-  color: rgb(49, 49, 49);
+  border: 1px solid #393e46;;
+  color: #393e46;
   border-radius: 5px;
   text-align: center;
 }
 
 #play-game-btn:hover {
-  background: rgb(49, 49, 49);
+  background: #8785a2;
+  border:none;
   color: white;
 }
 
 
 /* =====================
-turn
+players
 ========================*/
 
-#turn {
+.players {
   margin: 10px auto;
-  height: 30px;
-  width: 300px;
+  height: 70px;
+  width: 200px;
   text-align: center;
-  color: rgb(49, 49, 49);
+  display: grid;
+  grid-template-rows: 30% 40% 40%;
+}
+
+#turn {
+  grid-template-rows: 0 / 1;
+  color: #393e46;
   font-size: 12px;
+  margin: 0px auto;
+}
+
+.player-container {
+  margin: 0px auto;
+  text-align: center;
+  color: #8785a2;
+  font-size: 12px;
+  justify-content: center;
+  align-content: center;
+}
+
+.icon {
+  float: left;
+  margin-top: 4px;
+}
+
+#player1, #player2 {
+  float: left;
+  margin-top: 9px;
+  margin-left: 2px;
 }
 
 

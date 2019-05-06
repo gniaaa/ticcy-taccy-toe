@@ -12,7 +12,7 @@
 
 <body>
   <div id="title">
-    TICCY TACCY TOE
+    TIC TAC TOE
   </div>
   <div id="board">
     <div class="tile tile-0-0"></div>
@@ -28,13 +28,25 @@
   <div id="play">
     <button id="play-game-btn">Start a new game</button>
   </div>
-  <div id="turn"></div>
+  <div class="players">
+    <div id="turn"></div>
+    <div class="player-container">
+      <img class="icon" src="media/person-20.jpg">
+      <div id="player1"></div>
+    </div>
+    <div class="player-container">
+      <img class="icon" src="media/person-20.jpg">
+      <div id="player2"></div>
+    </div>
+  </div>
+
+
   <script>
-    window.addEventListener('load', function (event) {
-      player1 = (prompt('Player 1\'s name: ') || 'player1').toLowerCase();
-      player2 = (prompt('Player 2\'s name: ') || 'player2').toLowerCase();
-      startNewGame();
-    })
+    // window.addEventListener('load', function (event) {
+    //   player1 = (prompt('Player 1\'s name: ') || 'player1').toLowerCase();
+    //   player2 = (prompt('Player 2\'s name: ') || 'player2').toLowerCase();
+    //   startNewGame();
+    // })
 
     document.addEventListener('click', function (event) {
       if (event.target.id === 'play-game-btn') {

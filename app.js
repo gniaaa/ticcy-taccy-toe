@@ -51,10 +51,16 @@ class Board {
   }
 };
 
+
+// object to store current
+
 // current board
 var currentGame;
 var player1 = '';
 var player2 = '';
+
+// object for presentation
+
 
 // set up a new board for each game
 var startNewGame = function () {
@@ -103,4 +109,16 @@ var updateTurn = function () {
   var currentPlayer = document.getElementById('turn');
   var player = currentGame.getPlayer().name;
   currentPlayer.innerText = player + ': your turn!';
-} 
+}
+
+window.onload = (event) => {
+  player1 = (prompt('Player 1\'s name: ') || 'player1').toLowerCase();
+  player2 = (prompt('Player 2\'s name: ') || 'player2').toLowerCase();
+
+  var p1 = document.getElementById("player1");
+  p1.innerText = 'player 1: ' + player1;
+
+  var p2 = document.getElementById("player2");
+  p2.innerText = 'player 2: ' + player2;
+  startNewGame();
+};
