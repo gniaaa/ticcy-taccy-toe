@@ -55,14 +55,6 @@ class View {
   constructor() {
   }
 
-  startNewGame() {
-    currentGame.board.player1.name = currentGame.player1;
-    currentGame.board.player2.name = currentGame.player2;
-
-    var currentPlayer = document.getElementById('turn');
-    currentPlayer.innerText = currentGame.board.player1.name + ': you start!';
-  }
-
   clearTiles() {
     var tiles = document.getElementsByClassName('tile');
     for (let tile of tiles) {
@@ -90,8 +82,10 @@ class View {
         currentGame.player1Score++;
       } else {
         currentGame.player2Score++;
+        currentGame.lastWinner = 'player2';
       }
-      currentGame.view.displayPlayerNamesAndScores();
+
+      this.startNewGame();
       return;
     }
 
@@ -119,6 +113,20 @@ class View {
     p2.innerText = `player 2: ${currentGame.player2}, score: ${currentGame.player2Score}`;
   }
 
+  updatePlayers() {
+    currentGame.board.player1.name = currentGame.lastWinner === 'player1' ? currentGame.player1 : currentGame.player2;
+    currentGame.board.player2.name = currentGame.lastWinner === 'player1' ? currentGame.player2 : currentGame.player1;
+
+    var currentPlayer = document.getElementById('turn');
+    currentPlayer.innerText = currentGame.board.player1.name + ': you start!';
+  }
+
+  startNewGame() {
+    currentGame.board = new Board();
+    this.displayPlayerNamesAndScores();
+    this.updatePlayers();
+    this.clearTiles();
+  }
 }
 
 var currentGame = {
@@ -127,15 +135,13 @@ var currentGame = {
   player1: '',
   player2: '',
   player1Score: 0,
-  player2Score: 0
+  player2Score: 0,
+  lastWinner: 'player1'
 };
 
 
 window.onload = (event) => {
-  currentGame.board = new Board();
-
   currentGame.view = new View();
   currentGame.view.getPlayerNames();
-  currentGame.view.displayPlayerNamesAndScores();
   currentGame.view.startNewGame();
 };

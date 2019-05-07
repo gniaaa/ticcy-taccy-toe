@@ -43,9 +43,7 @@
   <script>
     document.addEventListener('click', function (event) {
       if (event.target.id === 'play-game-btn') {
-        currentGame.board = new Board();
         currentGame.view.startNewGame();
-        currentGame.view.clearTiles();
       }
 
       if (event.target.classList.contains('tile')) {
