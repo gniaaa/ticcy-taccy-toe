@@ -89,8 +89,10 @@ class View {
       return;
     }
 
-    if (++currentGame.board.count > 9) {
+    if (++currentGame.board.count === 9) {
       alert('No winner. Try again!');
+      this.startNewGame();
+      return;
     }
   }
 
