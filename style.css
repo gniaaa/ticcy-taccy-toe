@@ -48,6 +48,15 @@ individual tiles
   color: #393e46;
 }
 
+.tile-0-0:hover,
+.tile-0-2:hover,
+.tile-1-1:hover,
+.tile-2-0:hover,
+.tile-2-2:hover {
+  background: #c3c1e6;
+  color: #393e46;
+}
+
 .tile-0-1,
 .tile-1-0,
 .tile-1-2,
@@ -56,6 +65,13 @@ individual tiles
   color: #393e46;
 }
 
+.tile-0-1:hover,
+.tile-1-0:hover,
+.tile-1-2:hover,
+.tile-2-1:hover {
+  background: #dcdbee;
+  color: #393e46;
+}
 
 /* =====================
 play game
@@ -89,7 +105,7 @@ players
 .players {
   margin: 10px auto;
   height: 70px;
-  width: 200px;
+  width: 300px;
   text-align: center;
   display: grid;
   grid-template-rows: 30% 40% 40%;

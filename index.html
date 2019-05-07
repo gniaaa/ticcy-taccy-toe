@@ -40,23 +40,17 @@
     </div>
   </div>
 
-
   <script>
-    // window.addEventListener('load', function (event) {
-    //   player1 = (prompt('Player 1\'s name: ') || 'player1').toLowerCase();
-    //   player2 = (prompt('Player 2\'s name: ') || 'player2').toLowerCase();
-    //   startNewGame();
-    // })
-
     document.addEventListener('click', function (event) {
       if (event.target.id === 'play-game-btn') {
-        startNewGame();
-        clearTiles();
+        currentGame.board = new Board();
+        currentGame.view.startNewGame();
+        currentGame.view.clearTiles();
       }
 
       if (event.target.classList.contains('tile')) {
-        updateGame(event.target);
-        updateTurn();
+        currentGame.view.updateGame(event.target);
+        currentGame.view.updateTurn();
       }
     })
 
